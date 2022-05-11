@@ -5,7 +5,6 @@ import medispan_qc
 import medispan_use_db_create_tables
 import medispan_copyinto
 # VPN needs to be connected :)
-# need to build main controller main()
 # this file is used to connect to snowsql client and run the files denoted by -f flag. these directories need to be updated for each new user.
 # change location of the files before running. check the files for complete setup.
 # files being passed - put_file.sql, medispan_create_tables.sql, medispan_copyinto.sql
@@ -15,7 +14,7 @@ import medispan_copyinto
 
 #os.system('''snowsql -c my_conn -f /Users/tobiascaouette/Documents/put_file.sql  -f /Users/tobiascaouette/Documents/medispan_create_tables.sql -f /Users/tobiascaouette/Documents/medispan_copyinto.sql -f /Users/tobiascaouette/Documents/medispan_qc.sql''')
 
-
+#change this directory dir to where the files are being created/written to
 dir = r"/Users/tobiascaouette/Documents/"
 def find_files(dir):
     list_files=[]
