@@ -3,7 +3,7 @@
 
 
 
-create or replace table test_mf2ndcm_20220510
+create or replace table test_mf2ndcm_20220511
  (ndc_upc_hri varchar2(11) not null
  ,modifier_code varchar2(6) not null
  ,reserve varchar2(6) null
@@ -13,7 +13,7 @@ create or replace table test_mf2ndcm_20220510
 ;
 
 
-create or replace table test_mf2sum_20220510
+create or replace table test_mf2sum_20220511
  (record_type varchar2(3) null
  ,reserve_1 varchar2(1) null
  ,sequence_number number(3,0) null
@@ -22,7 +22,7 @@ create or replace table test_mf2sum_20220510
  ,data_comment varchar2(87) null
  )
 ;
-create or replace table test_mf2ndc_20220510
+create or replace table test_mf2ndc_20220511
  (ndc_upc_hri varchar2(11) not null
  ,drug_descriptor_id varchar2(6) null
  ,tee_code varchar2(2) null
@@ -61,7 +61,7 @@ create or replace table test_mf2ndc_20220510
  )
 ;
 
-create or replace table test_mf2lab_20220510
+create or replace table test_mf2lab_20220511
  (medispan_labeler_id varchar2(5) not null
  ,manufacturer_name varchar2(30) null
  ,manufacturer_abbr_name varchar2(10) null
@@ -72,7 +72,7 @@ create or replace table test_mf2lab_20220510
  )
 ;
 
-create or replace table test_mf2tcgpi_20220510
+create or replace table test_mf2tcgpi_20220511
  (tcgpi_id varchar2(14) not null
  ,record_type varchar2(1) not null
  ,tcgpi_name varchar2(60) null
@@ -83,7 +83,7 @@ create or replace table test_mf2tcgpi_20220510
  )
 ;
 
-create or replace table test_mf2dict_20220510
+create or replace table test_mf2dict_20220511
  (field_identifier varchar2(4) not null
  ,field_description varchar2(35) null
  ,field_type varchar2(1) null
@@ -96,7 +96,7 @@ create or replace table test_mf2dict_20220510
  )
 ;
 
-create or replace table test_mf2val_20220510
+create or replace table test_mf2val_20220511
  (field_identifier varchar2(4) null
  ,field_value varchar2(15) null
  ,language_code varchar2(2) null--char
@@ -106,7 +106,7 @@ create or replace table test_mf2val_20220510
  )
 ;
 
-create or replace table test_mf2sec_20220510
+create or replace table test_mf2sec_20220511
  (external_drug_id varchar2(20) not null
  ,external_drug_id_type_code varchar2(1) not null
  ,alternate_drug_id varchar2(20) not null
@@ -116,7 +116,7 @@ create or replace table test_mf2sec_20220510
  )
 ;
 
-create or replace table test_mf2prc_20220510
+create or replace table test_mf2prc_20220511
  (ndc_upc_hri varchar2(11) not null
  ,price_code varchar2(1) not null
  ,price_effective_date varchar2(10) not null
@@ -129,7 +129,7 @@ create or replace table test_mf2prc_20220510
  )
 ;
 
-create or replace table test_mf2mod_20220510
+create or replace table test_mf2mod_20220511
  (modifier_code varchar2(6) not null
  ,modifier_description varchar2(25) null
  ,reserve varchar2(24) null
@@ -138,7 +138,7 @@ create or replace table test_mf2mod_20220510
  )
 ;
 
-create or replace table test_mf2err_20220510
+create or replace table test_mf2err_20220511
  (key_identifier varchar2(1) not null
  ,unique_key varchar2(19) not null
  ,data_element_code varchar2(4) not null
@@ -147,7 +147,7 @@ create or replace table test_mf2err_20220510
  )
 ;
 
-create or replace table test_mf2gppc_20220510
+create or replace table test_mf2gppc_20220511
  (generic_product_pack_code varchar2(8) not null
  ,package_size number null
  ,package_size_uom varchar2(2) null
@@ -161,7 +161,7 @@ create or replace table test_mf2gppc_20220510
  )
 ;
 
-create or replace table test_mf2name_20220510
+create or replace table test_mf2name_20220511
  (drug_descriptor_id varchar2(6) not null--char
  ,drug_name varchar2(30) null
  ,route_of_administration varchar2(2) null
@@ -193,7 +193,7 @@ create or replace table test_mf2name_20220510
  )
 ;
 
-create or replace table test_mf2gpr_20220510
+create or replace table test_mf2gpr_20220511
  (generic_product_pack_code varchar2(8) not null
  ,gppc_price_code varchar2(1) not null
  ,effective_date varchar2(10) not null
@@ -205,7 +205,7 @@ create or replace table test_mf2gpr_20220510
 ;
 
 
-create or replace table test_MF2RTDRG_20220510 
+create or replace table test_MF2RTDRG_20220511 
 (concept_type integer
  ,country_code integer
  ,concept_id integer 
@@ -218,7 +218,7 @@ create or replace table test_MF2RTDRG_20220510
  ,reserve varchar(28)
  )
 ;
-create OR REPLACE table test_MF2DESC_20220510 
+create OR REPLACE table test_MF2DESC_20220511 
  (concept_type integer not null
  ,country_code integer not null
  ,concept_id integer not null
@@ -228,7 +228,7 @@ create OR REPLACE table test_MF2DESC_20220510
  ,reserve varchar(67) null
  )
 ; 
-create or replace table test_mf2str_20220510
+create or replace table test_mf2str_20220511
  (ingredient_identifier varchar2(10) 
  ,reserve_1 varchar2(2) 
  ,transaction_cd varchar2(1) 
@@ -243,7 +243,7 @@ create or replace table test_mf2str_20220510
  ;
  
  
- create or replace table test_mf2idrg_20220510
+ create or replace table test_mf2idrg_20220511
  (ingredient_drug_id varchar2(10)  
  ,transaction_cd varchar2(1) 
  ,cas_number varchar2(20)
@@ -255,7 +255,7 @@ create or replace table test_mf2str_20220510
  )
  ;
   
-  create or replace table test_mf2set_20220510
+  create or replace table test_mf2set_20220511
  (concept_type varchar2(5) 
  ,counry_code integer
  ,concept_id varchar2(14) 
@@ -265,7 +265,7 @@ create or replace table test_mf2str_20220510
  ,reserve varchar2(25) 
  )
  ;
- create or replace table test_mf2ings_20220510
+ create or replace table test_mf2ings_20220511
  (ingredient_set_id varchar2(10)  
  ,ingredient_identifier varchar2(10) 
  ,active_inactive_ingredient_flag varchar2(1)
@@ -274,7 +274,7 @@ create or replace table test_mf2str_20220510
   
  )
  ;
-create or replace table test_mf2drg_20220510
+create or replace table test_mf2drg_20220511
  (concept_type varchar2(5) 
  ,country_code integer
  ,concept_id integer 
@@ -297,7 +297,7 @@ create or replace table test_mf2drg_20220510
  ;
  
  
-create or replace table test_mf2drgnm_20220510
+create or replace table test_mf2drgnm_20220511
  (concept_type varchar2(5) 
  ,country_code integer
  ,concept_id integer 
@@ -317,7 +317,7 @@ create or replace table test_mf2drgnm_20220510
  
 
 
-CREATE OR REPLACE TABLE test_MCMNAME_20220510
+CREATE OR REPLACE TABLE test_MCMNAME_20220511
  (
     MEDICAL_CONDITION_CODE VARCHAR(7), 
     COUNTRY_CODE VARCHAR(2), 
@@ -328,7 +328,7 @@ CREATE OR REPLACE TABLE test_MCMNAME_20220510
     TRANSACTION_CODE VARCHAR(1)
  );
  
- create or replace table test_indgind_20220510
+ create or replace table test_indgind_20220511
  (GPI varchar2(25),
 RESERVE_1 varchar2(4),
 MED_COND_RESTRICTION_CODE varchar2(7),

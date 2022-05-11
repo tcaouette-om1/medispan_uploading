@@ -1,4 +1,4 @@
---File used to select database, schema and files for medispan staging. these are executed in the staging_sno_sql.py file.
+
 use database research
 ;
 use schema medispan
@@ -18,3 +18,5 @@ PUT file:///Users/tobiascaouette/Documents/medispan/indication_0_0_mo_pdu-std_1.
 
 
 PUT file:///Users/tobiascaouette/Documents/medispan/med-file2_0_0_mo_pdu-delimt_complete_d_20220302/MEDFV2/USAENG/DB/DELIMIT/* @medispan/mdfv2 auto_compress=true;
+
+

@@ -1,5 +1,9 @@
 import os, shlex, subprocess
 from subprocess import call
+import put_file
+import medispan_qc
+import medispan_use_db_create_tables
+import medispan_copyinto
 # VPN needs to be connected :)
 # need to build main controller main()
 # this file is used to connect to snowsql client and run the files denoted by -f flag. these directories need to be updated for each new user.
@@ -11,7 +15,6 @@ from subprocess import call
 
 #os.system('''snowsql -c my_conn -f /Users/tobiascaouette/Documents/put_file.sql  -f /Users/tobiascaouette/Documents/medispan_create_tables.sql -f /Users/tobiascaouette/Documents/medispan_copyinto.sql -f /Users/tobiascaouette/Documents/medispan_qc.sql''')
 
-#os.system('''snowsql -c my_conn''')
 
 dir = r"/Users/tobiascaouette/Documents/"
 def find_files(dir):
@@ -27,8 +30,8 @@ def find_files(dir):
             list_files.append(os.path.join(dir, file))
     return sorted(list_files)
 
-files= find_files(dir)
-print(files)
+
+print(find_files(dir))
 
 def os_system(list_files):
     for i in list_files:
@@ -43,7 +46,17 @@ def os_system(list_files):
     gravy = f""" snowsql -c my_conn -f {put} -f {create} -f {copyinto} -f {qc}"""
     os.system(gravy)
 
-os_system(files)
+
 
 
     
+def main():
+    put_file
+    medispan_use_db_create_tables
+    medispan_copyinto
+    medispan_qc
+    files = find_files(dir)
+    os_system(files)
+
+if __name__ == "__main__":
+	main()

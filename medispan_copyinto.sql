@@ -1,12 +1,12 @@
 
 --MF2DICT
-COPY INTO test_MF2DICT_20220510 FROM @medispan/mdfv2/MF2DICT.gz
+COPY INTO test_MF2DICT_20220511 FROM @medispan/mdfv2/MF2DICT.gz
 ON_ERROR = 'ABORT_STATEMENT'
 --PURGE = TRUE
 ;
 
 --MF2GPPC
-COPY INTO test_MF2GPPC_20220510 from
+COPY INTO test_MF2GPPC_20220511 from
   (
   select 
     t.$1 generic_product_pack_code,
@@ -26,7 +26,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 ;
 
 --MF2GPR
-COPY INTO test_MF2GPR_20220510 FROM 
+COPY INTO test_MF2GPR_20220511 FROM 
 (
   select 
     t.$1 generic_product_pack_code,
@@ -45,7 +45,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2ndcm_20220510 from
+ COPY INTO test_mf2ndcm_20220511 from
   (
   select 
     t.$1 ndc_upc_hri,
@@ -61,7 +61,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 
 /*NDC File*/
- COPY INTO test_MF2NDC_20220510 from
+ COPY INTO test_MF2NDC_20220511 from
   (
   select 
     t.$1 ndc_upc_hri,
@@ -108,7 +108,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 /*MF2ERR Error Correct File
 The Error Correct File is present only in an Incremental Update when an error correction has been made.
 */
- COPY INTO test_MF2ERR_20220510 from
+ COPY INTO test_MF2ERR_20220511 from
   (
   select 
     t.$1 KEY_IDENTIFIER,
@@ -125,7 +125,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 /*MF2LAB
 Labeler File*/
 
-COPY INTO test_MF2LAB_20220510 from
+COPY INTO test_MF2LAB_20220511 from
   (
   select 
     t.$1 MEDISPAN_LABELER_ID,--char
@@ -144,7 +144,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 /*MF2MOD Modifier File */
 
-COPY INTO test_MF2MOD_20220510 from
+COPY INTO test_MF2MOD_20220511 from
   (
   select 
     t.$1 MODIFIER_CODE,
@@ -162,7 +162,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 --list @medispan/mdfv2
 /*MF2NAME Drug Name File */
 
- COPY INTO test_MF2NAME_20220510 from
+ COPY INTO test_MF2NAME_20220511 from
   (
   select 
     t.$1 DRUG_DESCRIPTOR_ID,
@@ -201,7 +201,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 /*MF2PRC NDC Price File */ --need to validate prices
 
-COPY INTO test_MF2PRC_20220510 FROM 
+COPY INTO test_MF2PRC_20220511 FROM 
 (
   select 
     t.$1 NDC_UPC_HRI,
@@ -220,7 +220,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 ;
 
 /*MF2SEC Secondary Alternate ID File */
-COPY INTO test_MF2SEC_20220510 from
+COPY INTO test_MF2SEC_20220511 from
   (
   select 
     t.$1 EXTERNAL_DRUG_ID,
@@ -238,7 +238,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 /*MF2SUM Summary File
 * The length for records within the Summary File is not fixed, and may vary from row to row; however, it will not exceed the value noted in the table above. */
-COPY INTO test_MF2SUM_20220510 from
+COPY INTO test_MF2SUM_20220511 from
   (
   select 
     t.$1 RECORD_TYPE,
@@ -256,7 +256,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 /*MF2TCGPI TC-GPI Name File*/
 
-COPY INTO test_MF2TCGPI_20220510 from
+COPY INTO test_MF2TCGPI_20220511 from
   (
   select 
     t.$1 TCGPI_ID,--TC-GPI Key
@@ -274,7 +274,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
 /*MF2VAL Validation/Translation File
  */
-COPY INTO test_MF2VAL_20220510 from
+COPY INTO test_MF2VAL_20220511 from
   (
   select 
     t.$1 FIELD_IDENTIFIER,
@@ -290,7 +290,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 ; 
 
 --RTDRG
-COPY INTO test_MF2RTDRG_20220510 from
+COPY INTO test_MF2RTDRG_20220511 from
 ( select 
  t.$1  concept_type
  ,t.$2 country_code 
@@ -309,7 +309,7 @@ COPY INTO test_MF2RTDRG_20220510 from
 ;
 
 
-COPY INTO test_MF2DESC_20220510 from
+COPY INTO test_MF2DESC_20220511 from
   (
   select 
     t.$1 concept_type,
@@ -329,7 +329,7 @@ ON_ERROR = 'ABORT_STATEMENT'
  
  --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2str_20220510 from
+ COPY INTO test_mf2str_20220511 from
   (
   select 
     t.$1 ingredient_identifier,
@@ -349,7 +349,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 ;   
   --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_MF2IDRG_20220510 from
+ COPY INTO test_MF2IDRG_20220511 from
   (
   select 
     t.$1 ingredient_identifier,
@@ -370,7 +370,7 @@ ON_ERROR = 'ABORT_STATEMENT';
  
  --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2set_20220510 from
+ COPY INTO test_mf2set_20220511 from
   (
   select 
     t.$1 concept_type,
@@ -389,7 +389,7 @@ ON_ERROR = 'ABORT_STATEMENT'
  
   --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2ings_20220510 from
+ COPY INTO test_mf2ings_20220511 from
   (
   select 
     t.$1 ingredient_set_id,
@@ -407,7 +407,7 @@ ON_ERROR = 'ABORT_STATEMENT';
  
  --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2drg_20220510 from
+ COPY INTO test_mf2drg_20220511 from
   (
   select 
     t.$1 concept_type,
@@ -437,7 +437,7 @@ ON_ERROR = 'ABORT_STATEMENT'
 
  --AL: 
  /*NDC Modifier File*/   
- COPY INTO test_mf2drgnm_20220510 from
+ COPY INTO test_mf2drgnm_20220511 from
   (
   select 
     t.$1 concept_type,
@@ -467,7 +467,7 @@ COPY INTO test_MCMNAME_STAGE from
   )
 ON_ERROR = 'ABORT_STATEMENT';
 
-INSERT INTO test_MCMNAME_20220510 
+INSERT INTO test_MCMNAME_20220511 
 select 
     left(stage_col, 7) MEDICAL_CONDITION_CODE,
     substring(stage_col, 8, 2) COUNTRY_CODE,
@@ -491,7 +491,7 @@ COPY INTO test_INDGIND_STAGE from
   )
 ON_ERROR = 'ABORT_STATEMENT';
 
-INSERT INTO test_INDGIND_20220510 
+INSERT INTO test_INDGIND_20220511 
 
 select
     left(stage_col, 14) GPI,
